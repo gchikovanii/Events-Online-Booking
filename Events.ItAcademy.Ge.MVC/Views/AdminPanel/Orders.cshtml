@@ -1,0 +1,43 @@
+﻿@using ItAcademy.Domain.OrderAggregate;
+@model IEnumerable<Order>
+
+@{
+    ViewData["Title"] = "List Of Orders";
+}
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(i => i.Event)</th>
+                    <th>@Html.DisplayNameFor(i => i.User)</th>
+                    <th>@Html.DisplayNameFor(i => i.Quantity)</th>
+                    <th>@Html.DisplayNameFor(i => i.Total)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var order in Model)
+                {
+                    <tr>
+                        <td class="align-middle">
+                            @Html.DisplayFor(i => order.Event.Title)
+                        </td>
+                        <td class="align-middle">
+                            @Html.DisplayFor(i => order.User.Email)
+                        </td>
+                        <td class="align-middle">
+                            @Html.DisplayFor(i => order.Quantity)
+                        </td>
+                        <td class="align-middle">
+                            @Html.DisplayFor(i => order.Total)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tr>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+</div>
+

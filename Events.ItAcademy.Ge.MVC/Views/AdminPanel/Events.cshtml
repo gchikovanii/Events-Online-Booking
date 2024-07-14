@@ -1,0 +1,71 @@
+﻿@using ItAcademy.Application.Events.Response;
+@model IEnumerable<EventResponse>
+@{
+    ViewData["Title"] = "List Of Events";
+}
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(i => i.Title)</th>
+                    <th>@Html.DisplayNameFor(i => i.Description)</th>
+                    <th>@Html.DisplayNameFor(i => i.Quantity)</th>
+                    <th>@Html.DisplayNameFor(i => i.Price)</th>
+                    <th>@Html.DisplayNameFor(i => i.Location)</th>
+                    <th>@Html.DisplayNameFor(i => i.StartDate)</th>
+                    <th>@Html.DisplayNameFor(i => i.EndDate)</th>
+                    <th>@Html.DisplayNameFor(i => i.Image)th>
+                    <th>@Html.DisplayNameFor(i => i.Email)</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var ev in Model)
+                {
+                    <tr>
+                        <td class="align-middle">
+                            @Html.DisplayFor(i => ev.Title)
+                        </td>
+                        <td class="align-middle">
+                            @Html.DisplayFor(i => ev.Description)
+                        </td>
+                        <td class="align-middle">
+                            @Html.DisplayFor(i => ev.Quantity)
+                        </td>
+                        <td class="align-middle">
+                            @Html.DisplayFor(i => ev.Price)
+                        </td>
+                        <td class="align-middle">
+                            @Html.DisplayFor(i => ev.Location)
+                        </td>
+                        <td class="align-middle">
+                            @Html.DisplayFor(i => ev.StartDate)
+                        </td>
+                        <td class="align-middle">
+                            @Html.DisplayFor(i => ev.EndDate)
+                        </td>
+                        <td class="align-middle">
+                            <img class="rounded-circle" src="@ev.Image" alt="No-Image" style="max-width: 100px" />
+                        </td>
+                        <td class="align-middle">
+                            @Html.DisplayFor(i => ev.Email)
+                        </td>
+                        <td class="align-middle">
+                            <a class="btn btn-outline-success">
+                                <i class="bi bi-check">Approve</i>
+                            </a>
+                            <a class="btn btn-outline-danger">
+                                <i class="bi bi-trash">Delete</i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tr>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+</div>
+

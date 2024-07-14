@@ -1,0 +1,73 @@
+﻿@using ItAcademy.Application.Events.Response;
+
+@model IEnumerable<EventResponse>
+@{
+    ViewData["Title"] = "List Of Events";
+}
+<div class="row">
+    @foreach (var ev in Model)
+    {
+        <div class="col-md-4 col-xs-6 border-primary mb-3">
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-12">
+                        <div class="card-header text-white bg-primary">
+                            <p class="card-text">
+                                @ev.Title
+                                <a class="text-white floating-right">
+                                    <i class="bg-primary bi-pencil-square"></i>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <img src="@ev.Image" alt="No-Image" style="float: left; width: 210px;
+                         height: 260px; object-fit:cover" />
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card-body">
+                            <p class="card-text"><b>Title: </b>@ev.Title</p>
+                            <p class="card-text"><b>Location: </b>@ev.Location</p>
+                            <p class="card-text"><b>Category: </b>@ev.Price</p>
+                            <p class="card-text"><b>Start Date: </b>@ev.StartDate.ToString("dd MMM yy")</p>
+                            <p class="card-text"><b>End Date: </b>@ev.EndDate.ToString("dd MMM yy")</p>
+                            <p class="card-text ">
+                                <b>Status: </b>
+                                @if (DateTime.Now >= @ev.StartDate && DateTime.Now <= ev.EndDate)
+                                {
+                                    <span class="badge bg-success text-white">AVAILABLE</span>
+                                }
+                                else if (DateTime.Now > ev.EndDate)
+                                {
+                                    <span class="badge bg-danger text-white">EXPIRED</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-primary text-white">UPCOMING</span>
+                                }
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="card-footer">
+                            <p class="card-text d-flex justify-content-between">
+                                <a class="btn btn-outline-info" asp-action="Details" asp-route-id="@ev.Id">
+                                    <i class="bi bi-eye-fill"></i> Show Details
+                                </a>
+                                <a class="btn btn-success text-white float-right">
+                                    <i class="bi bi-cart-plus">
+                                    </i> Add to Cart (Price @ev.Price.ToString("c"))
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+

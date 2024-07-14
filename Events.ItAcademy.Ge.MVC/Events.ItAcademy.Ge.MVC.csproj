@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ItAcademy.Application\ItAcademy.Application.csproj" />
+    <ProjectReference Include="..\ItAcademy.Domain\ItAcademy.Domain.csproj" />
+    <ProjectReference Include="..\ItAcademy.Infrastructure\ItAcademy.Infrastructure.csproj" />
+    <ProjectReference Include="..\ItAcademy.Persistence\ItAcademy.Persistence.csproj" />
+  </ItemGroup>
+
+</Project>

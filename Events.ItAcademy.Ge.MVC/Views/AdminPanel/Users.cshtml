@@ -1,0 +1,55 @@
+﻿@using ItAcademy.Domain.UserAggregate;
+@model IEnumerable<User>
+
+@{
+    ViewData["Title"] = "List Of Users";
+}
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(i => i.UserName)</th>
+                    <th>@Html.DisplayNameFor(i => i.Email)</th>
+                    <th>@Html.DisplayNameFor(i => i.Gender)</th>
+                    <th>@Html.DisplayNameFor(i => i.Role)</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model)
+                {
+                    <tr>
+                        <td class="align-middle">
+                            @Html.DisplayFor(i => user.Id)
+                        </td>
+                        <td class="align-middle">
+                            @Html.DisplayFor(i => user.UserName)
+                        </td>
+                        <td class="align-middle">
+                            @Html.DisplayFor(i => user.Email)
+                        </td>
+                        <td class="align-middle">
+                            @Html.DisplayFor(i => user.Gender)
+                        </td>
+                        <td class="align-middle">
+                            @Html.DisplayFor(i => user.Role)
+                        </td>
+                        <td class="align-middle">
+                            <a class="btn btn-outline-warning">
+                                <i class="bi bi-pencil-square">Edit Role</i>
+                            </a>
+                            <a class="btn btn-outline-danger">
+                                <i class="bi bi-trash">Delete User</i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tr>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
