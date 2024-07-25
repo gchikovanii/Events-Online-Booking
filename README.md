@@ -18,3 +18,12 @@ Deploy the platform to your hosting environment.
 
 # Feedback
 I value your feedback! It's a personal project so, if you have suggestions, feature requests, or issues, please file an issue.
+
+## License
+
+This project is proprietary and all rights are reserved. Unauthorized copying, modification, distribution, or use of this software is strictly prohibited.
+
+For any inquiries, please contact:
+
+- **Email**: gchikovanii25@gmail.com
+- **Location**: Tbilisi, Georgia
